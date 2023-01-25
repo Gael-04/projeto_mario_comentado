@@ -1,0 +1,69 @@
+<!DOCTYPE html> <!-- // tipo de documento -->
+<html lang="pt-BR"> <!-- o site como um todo -->
+
+<head> <!-- contém a parte "por baixo dos panos" do código, os metadados, identificadores, variáveis, etc. -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Bros</title> <!-- Nome que aparece na aba do navegador -->
+    <link rel="shortcut icon" href="./SRC/Imagens/favicon.ico" type="image/x-icon"> <!-- imagem que aparece na aba do navegador -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- essas três linhas marcam a fonte do site. Tirado do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./SRC/CSS/reset.css"> <!-- linka o arquivo css ao HTML -->
+    <link rel="stylesheet" href="./SRC/CSS/style.css">
+    <link rel="stylesheet" href="./SRC/CSS/responsive.css">
+</head>
+
+<body> <!-- o corpo do site, aquilo que usuário interage -->
+    <div class="video_fundo"> <!-- uma divisão do site. Não é bom usar tanto -->
+        <video class="video" autoplay loop muted> <!-- reproduz um video. Muitas tags interessantes -->
+            <source src="./SRC/video/video-mario.mp4" type="video/mp4"> <!-- mostra a fonte do vídeo. Type informa o tipo de arquivo -->
+        </video> 
+    </div>
+
+    <header class="cabecalho"> <!-- cabeçalho da página -->
+        <a> <!-- mostra algum link -->
+            <img class="logo" src="./SRC/Imagens/logo-chapeu-mario.png" alt="Logo Mario">
+            <!-- uma imagem, use ./ para linkar a imagem -->
+        </a>
+
+        <nav><!-- contém links de navegação para outros sites ou partes do site -->
+            <ul class="menu_navegacao"> <!-- unordered list, lista desordenada. Existe também ol, ordered list -->
+                <li><a href="#">Home</a></li> <!-- list item, item de lista -->
+                <li><a href="#">Detalhes</a></li> <!-- o <a> é para linkar algo ao menu. O # é para não levar a lugar nenhum -->
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container"> <!-- conteúdo principal do site -->
+        <div class="informacoes">
+            <img src="./SRC/Imagens/titulo.png" alt="Título 'Super Mario Bros'" class="imagem_titulo">
+
+            <p class="descricao"> <!-- parágrafo, adiciona texto ao site. Lorem pode ser usado como placeholder -->
+                Mario é um encanador junto com seu irmão Luigi. Um dia, eles vão parar no reino dos cogumelos, governado
+                pela Princesa Peach, mas ameaçado pelo rei dos Koopas, que faz de tudo para conseguir reinar em todos os
+                lugares.
+            </p>
+
+            <button class="botao_trailer">
+                Assista ao trailer
+            </button>
+        </div>
+
+        <img class="mario" src="./SRC/Imagens/super-mario-chars.png" alt="Personagens do elenco">
+
+        <div class="modal"> <!-- popup do trailer -->
+            <div class="conteudo_modal">
+                <span class="fechar_modal"> X </span>
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/watch?v=Cb4WV4aXBpk" title="Trailer oficial" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+    <script src="./SRC/js/index.js"></script> <!-- linka o js, feito no fim do body para evitar erros -->
+
+</body>
+
+</html>

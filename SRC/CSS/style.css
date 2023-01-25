@@ -1,0 +1,145 @@
+body{
+    font-family: 'Poppins'; 
+}
+
+.cabecalho /* o "." mostra que linka uma classe, não uma tag HTML */
+{
+    /* background-color: darkgray; */ /* é bom sempre colocar um fundo para poder ver o espaço ocupado pelo elemento */
+    display: flex; /* muda a forma de display dos itens */
+    flex-direction: row; /* redundante nesse caso, mas pode ser utilizado para mudar a direção do flex */
+    justify-content: space-between; /* justifica os itens, nesse caso co  espaço entre eles */
+    padding: 30px; /* espaçamento entre o conteúdo e a borda. Como só tem um valor, ele aplica em todas as direções */
+    max-width: 1440px; 
+    margin: 0 auto; /* não muda a distância vertical (0) e centraliza horizontalmente (auto) */
+}
+
+.cabecalho .logo /* apenas a class "logo" dentro da class "cabeçalho" será afetada */
+{
+    width: 65px;
+}
+
+.cabecalho .menu_navegacao{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.cabecalho nav li a /* sempre o ultimo elemento é o estilizado */
+{
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 25px;
+    padding: 10px 20px; /* espaçamento interno entre os elementos, segue a ordem dos espaçamentos: vertical (10px) horizontal (20px) */
+    border-radius: 50px; /* deixa as bordas arredondadas */
+    transition: 0.3s; /* tempo de transição entre efeitos */
+}
+
+.cabecalho nav li a:hover /* hover aparece quando passa o mouse por cima do elemento. Esse estilo só aparece nessas condições */
+{
+    background-color: #d5011d;
+    
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 132px); /* vh é viewport hight, varia com o tamanho da tela. Varia com porcentagem. O calc faz um cálculo, o 132px é o tamanho do menu */
+    padding: 0 30px 30px; /* topo, baixo, horizontal */
+}
+
+.container .imagem_titulo{
+    max-width: 500px;
+}
+
+.container .descricao{
+    color: #a8adb7;
+    width: 85%;
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+.container .botao_trailer{
+    background-color: #ff0021;
+    color: #ffffff;
+    padding: 15px; 
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer; /* o mouse muda quando passa por cima */
+    border: none; /* tira a borda padrão */
+    text-transform: uppercase; /* transforma o texto em maiúsculo */
+    transition: 0.5s all ease-in-out;
+}
+
+.container .botao_trailer:hover{
+    transform: scale(1.1); /* quando passa o mouse o elemento aumenta em tamanho 1.1x */
+}
+
+.video_fundo{
+    background-color: #161616;
+    position: absolute; /* deixa o elemento em outro plano */
+    z-index: -1; /* define a posição z (profundidade) do elemento, muda ele de plano */
+    width: 100vw; /* viewport width, igual o vh, mas de largura */
+    height: 100vh;
+    overflow: hidden; /* esconde a largura e altura que "transborda" da tela */
+    display: flex; 
+    justify-content: center;
+}
+
+.video_fundo .video{
+    height: 100vh;
+}
+
+.video_fundo::after /* pseudoelemento, simula um elemento HTML com base em um já existente */
+{
+    content: ""; /* "" simboliza conteúdo vazio */
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0; /* alinha ao topo */
+    left: 0; /* alinha à esquerda */
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,1) 100%); /* para conseguir o gradiente mais fácil usar o cssgradient.io */
+}
+
+.modal{
+    background-color: hsla(60, 2%, 20%, 0.749);
+    position: fixed; /* fixa a posição do elemento*/
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    visibility: hidden; /* esconde o elemento */
+}
+
+.conteudo_modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border-radius: 5px;
+    gap: 15px; /* vão entre os elementos */
+}
+
+.fechar_modal{
+    background-color: #ffffff;
+    color: #f03a17;
+    font-weight: bold;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.modal iframe{
+    border-width: 0;
+    width: 640px;
+    height: 360px;
+}
+
+.modal.aberto{ /* não colocar espaço entre as classes */
+    opacity: 1;
+    visibility: visible;
+}
